@@ -23,6 +23,7 @@ function ../.. {
 alias rd='rm -rf'
 alias ff='find . -name'
 alias ga='git add'
+alias gar='git apply --reject'
 alias gc='git commit'
 alias gcb='git checkout -b'
 alias gcd='git checkout dev'
