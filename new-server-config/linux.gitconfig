@@ -1,0 +1,9 @@
+
+
+[sendemail]
+        smtpencryption =
+        smtpdomain = ***.com
+        smtpserver = smtpscn.***.com
+        smtpserverport = 25
+        smtpuser = my_name
+
