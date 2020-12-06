@@ -9,8 +9,11 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias gar='git apply --reject'
 alias gcd='git checkout dev'
 alias gbd='git branch -D'
+alias gfp='git format-patch'
 alias gg='git grep'
 alias pc="proxychains4"
 alias rd='rm -rf'
+alias rs='repo sync'
+alias ru='repo upload'
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
