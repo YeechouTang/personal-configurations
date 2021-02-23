@@ -82,20 +82,31 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-alias ll='ls -al'
 alias caf='caffeinate -u -t '
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias ff='find . -name'
 alias trans='iconv -f GB2312 -t UTF-8 '
 alias hgs="hexo g && hexo s"
 alias hgd="hexo g && hexo d"
-alias rd='rm -rf'
+alias gam='git am'
+alias gama='git am --abort'
+alias gamr='git am --resolved'
+alias gar='git apply --reject'
 alias gcd='git checkout dev'
+alias gclean='git clean -dfx'
 alias gbd='git branch -D'
+alias gfp='git format-patch'
 alias gg='git grep'
 alias gs='git show'
+alias ll='ls -al'
+alias rd='rm -rf'
+alias rs='repo sync'
+alias ru='repo upload'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 export PATH="/usr/local/sbin:$PATH"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
 source /Users/tangyizhou/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
