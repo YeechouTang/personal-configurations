@@ -83,6 +83,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 alias caf='caffeinate -u -t '
+alias cs='cscope -Rbkq'
+alias ct="ctags -f /home/tangyizhou/git/code_dir/tags -R --exclude='.git*' --exclude='build*' /home/tangyizhou/git/code_dir"
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias ff='find . -name'
 alias trans='iconv -f GB2312 -t UTF-8 '
