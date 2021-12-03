@@ -1,5 +1,18 @@
-
-
+[user]
+        name = Tang Yizhou
+        email = tangyeechou@gmail.com
+[core]
+        editor = vim
+        symlinks = true
+[commit]
+        template = /home/tangyizhou/.gitmsg
+[color]
+        ui = auto
+[credential]
+        helper = store
+[http]
+        sslVerify = false
+        postBuffer = 524288000
 [sendemail]
         smtpencryption =
         smtpdomain = ***.com
