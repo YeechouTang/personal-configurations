@@ -14,9 +14,11 @@
         sslVerify = false
         postBuffer = 524288000
 [sendemail]
-        smtpencryption =
-        smtpdomain = ***.com
-        smtpserver = smtpscn.***.com
-        smtpserverport = 25
-        smtpuser = my_name
-
+        from = tangyeechou@gmail.com
+        smtpserver = smtp.gmail.com
+        smtpuser = tangyeechou@gmail.com
+        smtpencryption = tls
+        smtppass = 
+        chainreplyto = false
+        smtpserverport = 587
+        # smtpdomain = ***.com
