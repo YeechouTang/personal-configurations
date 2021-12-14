@@ -20,6 +20,10 @@ function ... {
     cd ../..
 }
 
+function .... {
+    cd ../../..
+}
+
 alias ff='find . -name'
 alias ga='git add'
 alias gam='git am'
