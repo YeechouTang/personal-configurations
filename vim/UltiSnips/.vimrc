@@ -110,19 +110,18 @@ noremap <leader>n :lnext<CR>
 
 " my ctags configs
 set tags+=/home/tangyizhou/git/hulk/tags
-" my cscope settings
 if has("cscope")
-▸       set cscopeprg=/usr/bin/cscope
-▸       set cscopetagorder=0
-▸       set cscopetag
-▸       set cscopequickfix=s-,c-,d-,i-,t-,e-
-▸       set nocscopeverbose
-▸       if filereadable("cscope.out")
-▸       ▸       cscope add cscope.out
-▸       elseif $CSCOPE_DB != ""
-▸       ▸       cscope add $CSCOPE_DB
-▸       endif
-▸       set cscopeverbose
+	set cscopeprg=/usr/bin/cscope
+	set cscopetagorder=0
+	set cscopetag
+	set cscopequickfix=s-,c-,d-,i-,t-,e-
+	set nocscopeverbose
+	if filereadable("cscope.out")
+		cscope add cscope.out
+	elseif $CSCOPE_DB != ""
+		cscope add $CSCOPE_DB
+	endif
+	set cscopeverbose
 endif
 " Ctrl + shift + -
 " find target definition
@@ -217,11 +216,11 @@ match OverLength /\%121v.\+/
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
-▸       let save_cursor = getpos(".")
-▸       let old_query = getreg('/')
-▸       :%s/\s\+$//e
-▸       call setpos('.', save_cursor)
-▸       call setreg('/', old_query)
+	let save_cursor = getpos(".")
+	let old_query = getreg('/')
+	:%s/\s\+$//e
+	call setpos('.', save_cursor)
+	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 
@@ -230,14 +229,14 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " insert file header automatically
 function! SetHeader()
-▸       call setline(1,          "/*")
-▸       call append(line("."),   " * Copyright (C) Company Co., Ltd. ".strftime("%Y. All rights reserved."))
-▸       call append(line(".")+1, " * Description:")
-▸       call append(line(".")+2, " * Author: Tang")
-▸       call append(line(".")+3, " * Create: ".strftime("%a %b %d %H:%M:%S %Y"))
-▸       call append(line(".")+4, " */")
-▸       ""position to the end of the file
-▸       autocmd BufNewFile * normal G
+	call setline(1,          "/*")
+	call append(line("."),   " * Copyright (C) Huawei Technologies Co., Ltd. ".strftime("%Y. All rights reserved."))
+	call append(line(".")+1, " * Description:")
+	call append(line(".")+2, " * Author: Huawei OS Kernel Lab")
+	call append(line(".")+3, " * Create: ".strftime("%a %b %d %H:%M:%S %Y"))
+	call append(line(".")+4, " */")
+	""position to the end of the file
+	autocmd BufNewFile * normal G
 endfunction
 noremap <leader>sh :call SetHeader()<CR>
 
