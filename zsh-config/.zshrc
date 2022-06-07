@@ -51,7 +51,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew autojump zsh-autosuggestions)
+plugins=(git macos brew autojump zsh-autosuggestions)
 
 autoload zmv
 
@@ -111,7 +111,7 @@ alias ru='repo upload'
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"  # Perhaps no use in new Mac
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
 source /Users/tangyizhou/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
