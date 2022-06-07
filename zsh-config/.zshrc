@@ -114,4 +114,5 @@ alias ru='repo upload'
 export PATH="/usr/local/sbin:$PATH"  # Perhaps no use in new Mac
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
-source /Users/tangyizhou/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /Users/tangyizhou/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
