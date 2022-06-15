@@ -24,6 +24,11 @@ function .... {
     cd ../../..
 }
 
+function take {
+    mkdir -p $1
+    cd $1
+}
+
 alias ff='find . -name'
 alias ga='git add'
 alias gam='git am'
