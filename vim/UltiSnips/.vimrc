@@ -230,9 +230,9 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " insert file header automatically
 function! SetHeader()
 	call setline(1,          "/*")
-	call append(line("."),   " * Copyright (C) Huawei Technologies Co., Ltd. ".strftime("%Y. All rights reserved."))
+	call append(line("."),   " * Copyright (C) Shopee Singapore PTE Ltd. ".strftime("%Y. All rights reserved."))
 	call append(line(".")+1, " * Description:")
-	call append(line(".")+2, " * Author: Huawei OS Kernel Lab")
+	call append(line(".")+2, " * Author: Linux kernel team of Engineering Infrastructure")
 	call append(line(".")+3, " * Create: ".strftime("%a %b %d %H:%M:%S %Y"))
 	call append(line(".")+4, " */")
 	""position to the end of the file
