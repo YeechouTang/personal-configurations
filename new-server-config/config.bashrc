@@ -1,4 +1,4 @@
-PS1="\w \$ "
+# PS1="\w \$ "
 
 function - {
     cd -
