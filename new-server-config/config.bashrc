@@ -1,4 +1,9 @@
-# PS1="\w \$ "
+export PS1='\[\e[1;32m\]\u@\H\[\e[0;33m\] \w \[\e[1;34m\]\$\[\e[0m\] '
+export LC_ALL=en_US.UTF-8
+export HISTTIMEFORMAT="%Y-%m-%d %T "
+export HISTCONTROL=ignoreboth
+export HISTSIZE=100000
+export HISTFILESIZE=2000000
 
 function - {
     cd -
@@ -76,7 +81,9 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gup='git pull --rebase'
+alias ll='ls -lF
+alias ls='ls -p --color=auto'
 alias rd='rm -rf'
 alias rs='repo sync'
 alias ru='repo upload'
-
+alias tailf='tail -F'
