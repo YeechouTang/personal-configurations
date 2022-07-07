@@ -1,31 +1,3 @@
-"ctags config
-"set tags+=/home/tangyizhou/git/linux-kernel/tags
-" my cscope settings
-if has("cscope")
-	set cscopeprg=/usr/bin/cscope
-	set cscopetagorder=0
-	set cscopetag
-	set cscopequickfix=s-,c-,d-,i-,t-,e-
-	set nocscopeverbose
-	if filereadable("cscope.out")
-		cscope add cscope.out
-	elseif $CSCOPE_DB != ""
-		cscope add $CSCOPE_DB
-	endif
-	set cscopeverbose
-endif
-" Ctrl + shift + -
-" find target definition
-nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-" the functions which calls target
-nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-" the functions which target calls
-nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-" search the string
-nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-" egrep search
-nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-
 " Enable mouse in insert mode
 set mouse=i
 " Optimize for fast terminal connections
@@ -38,15 +10,22 @@ set hlsearch
 set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
+" Don't ignore case if uppercase char presented
+set smartcase
 " Disable error bells
 set noerrorbells
 " Minimal number of screen lines to keep above and below the cursor
 set scrolloff=3
+" reload files when changed on disk
+set autoread
+" do not keep a backup file
+set nobackup
 
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,cp936,gb18030,gb2312,gbk,big5,euc-jp,euc-kr,latin1
+set termencoding=utf-8
 
-" GUI configuration begion
+" GUI configuration begin
 
 "syntax enable
 "set background=dark
@@ -121,9 +100,9 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " insert file header automatically
 function! SetHeader()
 	call setline(1,          "/*")
-	call append(line("."),   " * Copyright (C) Huawei Technologies Co., Ltd. ".strftime("%Y. All rights reserved."))
+	call append(line("."),   " * Copyright (C) Shopee Singapore PTE Ltd. ".strftime("%Y. All rights reserved."))
 	call append(line(".")+1, " * Description:")
-	call append(line(".")+2, " * Author: Huawei OS Kernel Lab")
+	call append(line(".")+2, " * Author: Linux kernel team of Engineering Infrastructure")
 	call append(line(".")+3, " * Create: ".strftime("%a %b %d %H:%M:%S %Y"))
 	call append(line(".")+4, " */")
 	""position to the end of the file
@@ -136,6 +115,18 @@ noremap <leader>sh :call SetHeader()<CR>
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" https://github.com/ryanpcmcquen/fix-vim-pasting
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
 
 " web page
 noremap <leader>gh :! open https://github.com<CR>
