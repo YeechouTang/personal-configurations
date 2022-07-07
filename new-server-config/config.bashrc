@@ -1,3 +1,5 @@
+
+# Start tang's personal configurations
 export PS1='\[\e[1;32m\]\u@\H\[\e[0;33m\] \w \[\e[1;34m\]\$\[\e[0m\] '
 export LC_ALL=en_US.UTF-8
 export HISTTIMEFORMAT="%Y-%m-%d %T "
@@ -102,7 +104,7 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gup='git pull --rebase'
-alias ll='ls -lF
+alias ll='ls -lF'
 alias ls='ls -p --color=auto'
 alias rd='rm -rf'
 alias rs='repo sync'
