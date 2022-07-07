@@ -1,11 +1,13 @@
 [user]
         name = Tang Yizhou
         email = tangyeechou@gmail.com
+        #email = yizhou.tang@shopee.com
 [core]
         editor = vim
         symlinks = true
 [commit]
         template = /home/tangyizhou/.gitmsg
+        #template = /root/.gitmsg
 [color]
         ui = auto
 [credential]
@@ -13,6 +15,7 @@
 [http]
         sslVerify = false
         postBuffer = 524288000
+
 [sendemail]
         from = tangyeechou@gmail.com
         smtpserver = smtp.gmail.com
