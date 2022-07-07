@@ -5,6 +5,27 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=100000
 export HISTFILESIZE=2000000
 
+# These configs are not suitable everywhere. For example, for ansible.
+if [ "${SHELL##*/}" = "bash" ]; then if [[ "xterm-256color xterm-color xterm screen rxvt cygwin" == *"$TERM"* ]]; then
+    eval $(SHELL=/bin/bash $(type -p dircolors))
+    bind '"\e[B": history-search-forward'       # use arrow keys to find historical commands
+    bind '"\e[A": history-search-backward'
+    set bell-style none
+    set show-all-if-ambiguous on
+    set completion-ignore-case on
+    shopt -s checkwinsize histappend
+    export PS1='\[\e]0;\h:\w\a\]\n\[\e[1;32m\]\u@\H\[\e[0;33m\] \w \[\e[0m[\D{%H:%M:%S}]\n\[\e[1;$((31+3*!$?))m\]\$\[\e[0m\] '
+    if grep --version >/dev/null 2>&1 ; then
+        alias grep='grep --color';
+    fi
+    for f in /usr/share/bash-completion/bash_completion ~/.z.sh ~/.git-completion.bash ~/.git-prompt.sh; do
+        if [ -f $f ]; then source $f; fi;
+    done
+    if type -p __git_ps1; then
+        export PS1='\[\e]0;\h:\w\a\]\n\[\e[1;32m\]\u@\H\[\e[0;33m\] \w$(__git_ps1 " (%s)") \[\e[0m[\D{%H:%M:%S}]\n\[\e[1;$((31+3*!$?))m\]\$\[\e[0m\] ';
+    fi
+fi fi
+
 function - {
     cd -
 }
