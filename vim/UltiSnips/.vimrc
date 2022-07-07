@@ -147,15 +147,22 @@ set hlsearch
 set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
+" Don't ignore case if uppercase char presented
+set smartcase
 " Disable error bells
 set noerrorbells
 " Minimal number of screen lines to keep above and below the cursor
 set scrolloff=3
+" reload files when changed on disk
+set autoread
+" do not keep a backup file
+set nobackup
 
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,cp936,gb18030,gb2312,gbk,big5,euc-jp,euc-kr,latin1
+set termencoding=utf-8
 
-" GUI configuration begion
+" GUI configuration begin
 
 "syntax enable
 "set background=dark
@@ -245,6 +252,18 @@ noremap <leader>sh :call SetHeader()<CR>
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" https://github.com/ryanpcmcquen/fix-vim-pasting
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
 
 " web page
 noremap <leader>gh :! open https://github.com<CR>
