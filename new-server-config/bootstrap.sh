@@ -14,4 +14,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 echo "Vundle installation completed!"
 
+echo "Start to install fzf for zsh..."
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+echo "fzf installation completed!"
+
 source ~/.bashrc
