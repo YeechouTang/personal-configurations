@@ -7,10 +7,10 @@ echo "Start to install basic packages..."
 # as 'which' is not built-in command, we use 'type' here
 if [ $(type -t "yum") ]; then
     $PACKAGE_SYSTEM="yum"
-    yum install -y bash-completion git vim expect gcc ncurses-devel bison flex elfutils-libelf-devel openssl-devel
+    yum install -y bash-completion git vim expect
 elif [ $(type -t "apt") ]; then
     $PACKAGE_SYSTEM="apt"
-    apt install -y bash-completion git vim expect make build-essential ncurses-devel bison flex libelf-dev libssl-dev
+    apt install -y bash-completion git vim expect
 else
     echo "Skip installing basic packages!"
 fi
