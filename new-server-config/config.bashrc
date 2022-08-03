@@ -57,6 +57,16 @@ function take {
     cd $1
 }
 
+alias de='docker exec -it'
+alias di='docker image'
+alias dii="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dip="docker inspect --format '{{ .State.Pid }}'"
+alias dp='docker ps -a'
+alias dk='docker kill'
+alias dkc='docker kill $(docker ps -q)'
+alias dr='docker run -it --rm'
+alias drc='docker rm -f $(docker ps -qa)'
+alias drd='docker rmi $(docker images -q -f dangling=true)'
 alias ff='find . -name'
 alias ga='git add'
 alias gam='git am'
