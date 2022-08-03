@@ -88,8 +88,17 @@ alias caf='caffeinate -u -t '
 alias cs='cscope -Rbkq'
 alias ct="ctags -f /home/tangyizhou/git/code_dir/tags -R --exclude='.git*' --exclude='build*' /home/tangyizhou/git/code_dir"
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias de='docker exec -it'
+alias di='docker image'
+alias dii="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dip="docker inspect --format '{{ .State.Pid }}'"
+alias dp='docker ps -a'
+alias dk='docker kill'
+alias dkc='docker kill $(docker ps -q)'
+alias dr='docker run -it --rm'
+alias drc='docker rm -f $(docker ps -qa)'
+alias drd='docker rmi $(docker images -q -f dangling=true)'
 alias ff='find . -name'
-alias trans='iconv -f GB2312 -t UTF-8 '
 alias hgs="hexo g && hexo s"
 alias hgd="hexo g && hexo d"
 alias gam='git am'
@@ -107,6 +116,7 @@ alias ll='ls -al'
 alias rd='rm -rf'
 alias rs='repo sync'
 alias ru='repo upload'
+alias trans='iconv -f GB2312 -t UTF-8 '
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
