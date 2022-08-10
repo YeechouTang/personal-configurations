@@ -8,7 +8,8 @@ export HISTSIZE=100000
 export HISTFILESIZE=2000000
 
 # These configs are not suitable everywhere. For example, for ansible.
-if [ "${SHELL##*/}" = "bash" ]; then if [[ "xterm-256color xterm-color xterm screen rxvt cygwin" == *"$TERM"* ]]; then
+# Tang found that $TERM in his Ubuntu tmux environment is 'screen-256color'
+if [ "${SHELL##*/}" = "bash" ]; then if [[ "xterm-256color xterm-color xterm screen screen-256color rxvt cygwin" == *"$TERM"* ]]; then
     eval $(SHELL=/bin/bash $(type -p dircolors))
     bind '"\e[B": history-search-forward'       # use arrow keys to find historical commands
     bind '"\e[A": history-search-backward'
