@@ -2,6 +2,9 @@
 
 set +e
 
+# only effective in systemd
+timedatectl set-timezone Asia/Shanghai
+
 PACKAGE_SYSTEM=""
 echo "Start to install basic packages..."
 # as 'which' is not built-in command, we use 'type' here
