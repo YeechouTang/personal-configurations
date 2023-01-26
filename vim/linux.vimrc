@@ -1,43 +1,42 @@
 " My Dependencies
-" Vundle     https://github.com/VundleVim/Vundle.vim
+" Vim Plug     https://github.com/junegunn/vim-plug
 " Solarized Colorscheme https://github.com/altercation/vim-colors-solarized
 
-" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
-" Change mapleader
-let mapleader=","
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Make sure you use single quotes
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 " filesystem
-Plugin 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 " snippet
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " auto-complete
-Plugin 'jiangmiao/auto-pairs'     " it has side effects for .vimrc comments
-Plugin 'preservim/nerdcommenter'
-Plugin 'godlygeek/tabular'
+" Plug 'jiangmiao/auto-pairs'  " has side effects for .vimrc comments
+Plug 'preservim/nerdcommenter'
+Plug 'godlygeek/tabular'
 " search
-Plugin 'Yggdroot/LeaderF'
-Plugin 'Lokaltog/vim-easymotion'  " use <leader> <leader>
+" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } " need Python Vim
+Plug 'Lokaltog/vim-easymotion'  " use <leader> <leader>
 " all lanugage support
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " do syntax check
-Plugin 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
 
-" End of Vundle
 
 " NERDTree configs
 " Start NERDTree when Vim is started without file arguments.
@@ -88,25 +87,6 @@ noremap <leader>t :LeaderfTag<CR>
 " <C-U> / <C-W> clear all the prompt / word"
 " <C-T> / <C-]> / <C-X> open in new tab/vertical/horizontal split window
 " <Up> / <Down> recall last/next input pattern from history
-
-" syntastic
-let g:syntastic_mode_map = {
-   \ "mode": "passive",
-   \ "active_filetypes": [],
-    \ "passive_filetypes": [] }
-let g:syntastic_c_include_dirs = [ '/home/tangyizhou/git/kernel_test/memory_sharepool_t/memory_sharepool_t_src/libs',
-  \ '/home/tangyizhou/git/kernel_test/memory_sharepool_t/memory_sharepool_t_src/module' ]
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 1
-
-noremap <leader>c :SyntasticCheck<CR>
-noremap <leader>r :SyntasticReset<CR>
-noremap <leader>p :lprevious<CR>
-noremap <leader>n :lnext<CR>
-" :lopen / :lclose open/close location-list window
 
 " my ctags configs
 set tags+=/home/tangyizhou/git/hulk/tags
