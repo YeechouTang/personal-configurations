@@ -31,8 +31,8 @@ curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master
 echo "Configuration completed!"
 
 echo "Start to install vim-plug and its plugins for Vim..."
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall
 echo "Vim-plug installation completed!"
 
