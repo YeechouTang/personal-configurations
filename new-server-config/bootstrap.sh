@@ -30,10 +30,11 @@ curl -fo ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contr
 curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 echo "Configuration completed!"
 
-echo "Start to install Vundle and its plugins for Vim..."
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-echo "Vundle installation completed!"
+echo "Start to install vim-plug and its plugins for Vim..."
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall
+echo "Vim-plug installation completed!"
 
 set -e
 
