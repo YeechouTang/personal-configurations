@@ -153,8 +153,8 @@ highlight CursorLine term=bold cterm=bold guibg=Grey40
 
 " Enable syntax highlighting
 syntax on
-" line number
-set number
+" Line number. May introduce display bugs when delete lines.
+" set number
 " Enhance command-line completion
 set wildmenu
 " Show the current mode
