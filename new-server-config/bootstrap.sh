@@ -9,10 +9,10 @@ PACKAGE_SYSTEM=""
 echo "Start to install basic packages..."
 # as 'which' is not built-in command, we use 'type' here
 if [ $(type -t "yum") ]; then
-    $PACKAGE_SYSTEM="yum"
+    PACKAGE_SYSTEM="yum"
     yum install -y bash-completion git vim expect
 elif [ $(type -t "apt") ]; then
-    $PACKAGE_SYSTEM="apt"
+    PACKAGE_SYSTEM="apt"
     apt install -y bash-completion git vim expect
 else
     echo "Skip installing basic packages!"
