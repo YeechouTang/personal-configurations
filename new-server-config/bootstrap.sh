@@ -38,15 +38,6 @@ echo "Vim-plug installation completed!"
 
 set -e
 
-echo "Start to install fzf for zsh..."
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-spawn ~/.fzf/install
-expect {
-    "*[y]*" { send "y\n"; exp_continue; }
-}
-expect eof
-echo "fzf installation completed!"
-
 echo "Start to install packages..."
 if [ $PACKAGE_SYSTEM == "yum" ]; then
     yum install -y gcc ncurses-devel bison flex elfutils-libelf-devel openssl-devel
@@ -56,5 +47,14 @@ else
     echo "Skip installing packages!"
 fi
 echo "Packages installation completed!"
+
+echo "Start to install fzf for zsh..."
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+spawn ~/.fzf/install
+expect {
+    "*[y]*" { send "y\n"; exp_continue; }
+}
+expect eof
+echo "fzf installation completed!"
 
 source ~/.bashrc
