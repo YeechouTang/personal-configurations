@@ -50,6 +50,7 @@ echo "Packages installation completed!"
 
 echo "Start to install fzf for zsh..."
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 #/usr/bin/expect <<EOF
 #        spawn ~/.fzf/install
 #        expect {
