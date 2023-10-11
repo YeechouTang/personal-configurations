@@ -17,7 +17,7 @@
         postBuffer = 524288000
 
 [sendemail]
-        from = tangyeechou@gmail.com
+        from = Tang Yizhou  # tangyeechou@gmail.com
         smtpserver = smtp.gmail.com
         smtpuser = tangyeechou@gmail.com
         smtpencryption = tls
@@ -28,7 +28,7 @@
         
 # in shopee
 [sendemail]
-        from = yizhou.tang@shopee.com
+        from = Tang Yizhou  # yizhou.tang@shopee.com
         smtpserver = smtp.gmail.com
         smtpuser = yizhou.tang@shopee.com
         smtpencryption = tls
