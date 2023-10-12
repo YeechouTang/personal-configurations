@@ -5,6 +5,9 @@
 [core]
         editor = vim
         symlinks = true
+        abbrev = 12
+[pretty]
+        fixes = Fixes: %h (\"%s\")
 [commit]
         template = /home/tangyizhou/.gitmsg
         #template = /root/.gitmsg
