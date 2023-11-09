@@ -115,6 +115,7 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gup='git pull --rebase'
+alias ka='watch -n5 "echo keep alive"'   # keep an SSH connection alive
 alias ll='ls -hlF'
 alias ls='ls -p --color=auto'
 alias rd='rm -rf'
