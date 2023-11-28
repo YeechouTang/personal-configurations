@@ -58,6 +58,7 @@ function take {
     cd $1
 }
 
+alias df='df -hT'
 alias de='docker exec -it'
 alias di='docker image'
 alias dii="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
