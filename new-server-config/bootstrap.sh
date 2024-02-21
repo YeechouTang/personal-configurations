@@ -8,13 +8,12 @@ timedatectl set-timezone Asia/Shanghai
 PACKAGE_SYSTEM=""
 echo "Start to install basic packages..."
 # as 'which' is not built-in command, we use 'type' here
-# may be we need to install 'expect' package here. it conflicts with other package in the company.
 if [ $(type -t "yum") ]; then
     PACKAGE_SYSTEM="yum"
-    yum install -y bash-completion git vim
+    yum install -y bash-completion git vim expect
 elif [ $(type -t "apt") ]; then
     PACKAGE_SYSTEM="apt"
-    apt install -y bash-completion git vim
+    apt install -y bash-completion git vim expect
 else
     echo "Skip installing basic packages!"
 fi
