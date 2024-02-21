@@ -8,12 +8,13 @@ timedatectl set-timezone Asia/Shanghai
 PACKAGE_SYSTEM=""
 echo "Start to install basic packages..."
 # as 'which' is not built-in command, we use 'type' here
+# may be we need to install 'expect' package here. it conflicts with other package in the company.
 if [ $(type -t "yum") ]; then
     PACKAGE_SYSTEM="yum"
-    yum install -y bash-completion git vim expect
+    yum install -y bash-completion git vim
 elif [ $(type -t "apt") ]; then
     PACKAGE_SYSTEM="apt"
-    apt install -y bash-completion git vim expect
+    apt install -y bash-completion git vim
 else
     echo "Skip installing basic packages!"
 fi
@@ -33,7 +34,7 @@ echo "Configuration completed!"
 echo "Start to install vim-plug and its plugins for Vim..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall
+vim -c ':PlugInstall | qall!'
 echo "Vim-plug installation completed!"
 
 set -e
