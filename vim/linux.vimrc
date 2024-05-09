@@ -27,8 +27,8 @@ Plug 'godlygeek/tabular'
 Plug 'Lokaltog/vim-easymotion'  " use <leader> <leader>
 " all lanugage support
 Plug 'sheerun/vim-polyglot'
-" do syntax check
-Plug 'dense-analysis/ale'
+" do syntax check. This plugin causes C codes to display incorrectly on Shopee servers. Hasn't debugged.
+" Plug 'dense-analysis/ale'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
