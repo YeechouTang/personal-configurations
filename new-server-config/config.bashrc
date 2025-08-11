@@ -63,6 +63,7 @@ alias de='docker exec -it'
 alias di='docker image'
 alias dii="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias dip="docker inspect --format '{{ .State.Pid }}'"
+alias dm="dmesg -T --follow"
 alias dp='docker ps -a'
 alias dk='docker kill'
 alias dkc='docker kill $(docker ps -q)'

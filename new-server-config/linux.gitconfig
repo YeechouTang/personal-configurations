@@ -20,7 +20,6 @@
         sort = version:refname
 [diff]
         algorithm = histogram
-        colorMoved = plain
         mnemonicPrefix = true
         renames = true
 [push]
