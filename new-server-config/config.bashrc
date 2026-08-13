@@ -58,6 +58,22 @@ function take {
     cd $1
 }
 
+remove_kernel() {
+    local kver="$1"
+
+    if [[ -z "$kver" ]]; then
+        echo "Usage: remove_kernel <kernel-version>"
+        return 1
+    fi
+
+    rm -rf \
+        "/lib/modules/$kver" \
+        "/boot/vmlinuz-$kver" \
+        "/boot/initrd.img-$kver" \
+        "/boot/System.map-$kver" \
+        "/boot/config-$kver"
+}
+
 alias df='df -hT'
 alias de='docker exec -it'
 alias di='docker image'
